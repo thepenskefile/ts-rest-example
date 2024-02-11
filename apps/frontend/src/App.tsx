@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Posts } from './Posts';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 

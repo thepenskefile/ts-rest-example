@@ -27,9 +27,7 @@ export function Posts() {
     if(postsQuery?.isFetching) {
       return <div>LOADING</div>
     }
-  
-  
-  
+ 
     async function submitPost(e: React.SyntheticEvent) {
       e.preventDefault();
       const target = e.target as typeof e.target & {

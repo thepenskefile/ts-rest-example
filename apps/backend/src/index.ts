@@ -1,13 +1,13 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import dotenv from "dotenv";
-import cors from "cors"
-import bodyParser from "body-parser"
+import cors from "cors";
+import bodyParser from "body-parser";
 import { createExpressEndpoints, initServer } from "@ts-rest/express";
-import { contract } from 'contract'
-import { PrismaClient } from '@prisma/client'
+import { contract } from "contract";
+import { PrismaClient } from "@prisma/client";
 
 dotenv.config();
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 const app: Express = express();
 app.use(cors());
@@ -18,14 +18,12 @@ const s = initServer();
 
 const router = s.router(contract, {
   posts: {
-
     createPost: async ({ body }) => {
       const post = await prisma.post.create({
         data: {
           title: body.title,
           content: body?.content,
-        }
-
+        },
       });
 
       return {
@@ -33,7 +31,6 @@ const router = s.router(contract, {
         body: post,
       };
     },
-
 
     getPosts: async () => {
       const posts = await prisma.post.findMany();
@@ -52,7 +49,9 @@ const router = s.router(contract, {
     },
 
     getPost: async ({ params: { id } }) => {
-      const post = await prisma.post.findUnique({ where: { id: parseInt(id) } });
+      const post = await prisma.post.findUnique({
+        where: { id: parseInt(id) },
+      });
 
       // if(!post) {
       //   return {
@@ -66,7 +65,7 @@ const router = s.router(contract, {
         body: post,
       };
     },
-  }
+  },
 });
 
 createExpressEndpoints(contract, router, app);

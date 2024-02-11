@@ -4,16 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "backend": "pnpm --filter backend",
     "build": "pnpm run -r build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:frontend": "pnpm --filter frontend dev",
-    "dev:backend": "pnpm --filter backend dev",
-    "start:backend": "pnpm --filter backend start"
+    "contract": "pnpm --filter contract",
+    "frontend": "pnpm --filter frontend",
+    "lint": "npx nx run-many -t lint",
+    "lint:fix": "npx nx run-many -t lint:fix",
+    "nx:build": "nx build ts-rest-example",
+    "nx:test": "npx nx run-many -t test",
+    "nx:clean": "npx nx run-many -t clean",
+    "test": "pnpm run -r test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nx": "^17.2.8"
-  }
+    "nx": "17.3.0"
+  },
+  "nx": {}
 }
