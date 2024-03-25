@@ -2,7 +2,6 @@
     "compilerOptions": {
       "target": "ESNext", 
       "strict": true,
-      "allowJs": true,
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
       "forceConsistentCasingInFileNames": true,
@@ -10,7 +9,9 @@
       "module": "ESNext",
       "moduleResolution":"node",
       "outDir": "./dist",
+      "declaration": true,
+      "rootDir": "./src"
     },
-    "include": ["."],
+    "include": ["src"],
     "exclude": ["dist", "node_modules", "**/*.spec.ts"]
-  }
+}
