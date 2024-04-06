@@ -5,17 +5,18 @@
   "main": "index.js",
   "scripts": {
     "backend": "npx lerna run --scope backend",
-    "nest": "npx lerna run --scope nest",
     "build": "npx lerna run build",
     "contract": "npx lerna run --scope contract",
     "frontend": "npx lerna run --scope frontend",
+    "lint": "npx lerna run lint",
+    "nest": "npx lerna run --scope nest",
     "test": "npx lerna run test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lerna": "^8.1.2"
+    "lerna": "8.1.2"
   },
   "dependencies": {},
   "workspaces": ["packages/*", "apps/*"]
