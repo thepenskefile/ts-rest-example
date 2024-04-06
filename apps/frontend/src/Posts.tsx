@@ -24,8 +24,6 @@ export function Posts() {
       ['posts'], // <- queryKey
     );
 
-    console.log("BLAH POSTS QUERY: ", postsQuery)
-  
     if(postsQuery?.isFetching) {
       return <div>LOADING</div>
     }
