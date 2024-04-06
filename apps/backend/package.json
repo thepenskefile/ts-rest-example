@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run clean && tsc",
     "check-types": "tsc --noEmit",
     "clean": "rm -rf dist",
     "lint": "eslint src/**/*.ts",

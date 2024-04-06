@@ -1,17 +1,25 @@
 {
-    "compilerOptions": {
-      "strict": true,
-      "esModuleInterop": true,
-      "noImplicitAny": true,
-      "removeComments": true,
-      "preserveConstEnums": true,
-      "sourceMap": true,
+  "compilerOptions": {
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
-      "forceConsistentCasingInFileNames": true,
-      "skipLibCheck": true,
+      "baseUrl": "src",
       "declaration": true,
-      "rootDir": "./src",
-      "moduleResolution":"Node",
-    }
+      "esModuleInterop": true,
+      "inlineSourceMap": false,
+      "lib": ["esnext"],
+      "listEmittedFiles": false,
+      "listFiles": false,
+      "moduleResolution": "node",
+      "noFallthroughCasesInSwitch": true,
+      "pretty": true,
+      "resolveJsonModule": true,
+      "rootDir": "src",
+      "skipLibCheck": true,
+      "strict": true,
+      "traceResolution": false,
+      "types": ["node", "jest"]
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"]
 }
