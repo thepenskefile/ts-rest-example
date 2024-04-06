@@ -1,17 +1,17 @@
 {
     "compilerOptions": {
-      "target": "ESNext", 
       "strict": true,
       "esModuleInterop": true,
+      "noImplicitAny": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true,
+      "allowJs": true,
       "allowSyntheticDefaultImports": true,
       "forceConsistentCasingInFileNames": true,
       "skipLibCheck": true,
-      "module": "ESNext",
-      "moduleResolution":"node",
-      "outDir": "./dist",
       "declaration": true,
-      "rootDir": "./src"
-    },
-    "include": ["src"],
-    "exclude": ["dist", "node_modules", "**/*.spec.ts"]
+      "rootDir": "./src",
+      "moduleResolution":"Node",
+    }
 }

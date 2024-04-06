@@ -23,6 +23,8 @@ export function Posts() {
     const postsQuery = client.posts.getPosts.useQuery(
       ['posts'], // <- queryKey
     );
+
+    console.log("BLAH POSTS QUERY: ", postsQuery)
   
     if(postsQuery?.isFetching) {
       return <div>LOADING</div>

@@ -2,14 +2,20 @@
   "private": true,
   "name": "contract",
   "description": "TS rest contract",
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.0",
+  "main": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js",
+    "default": "./dist/esm/index.js",
+    "types": "./dist/types/index.d.ts"
+  },
   "engines": {
     "node": ">=16"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run clean && npx tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json",
     "clean": "rm -rf dist",
     "check-types": "tsc --noEmit",
     "dev": "tsc -w & nodemon build",
